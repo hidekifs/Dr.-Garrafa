@@ -1,3 +1,7 @@
 #ESP32
 
-oi fernandinho querido, ajuda o seu amiguinho
+#include <stdio.h>
+int main() {
+  printf ("hello world");
+  return 0;
+}
