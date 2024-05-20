@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:uno",
+    "port": "COM3",
+    "programmer": "esptool",
+    "sketch": "..\\..\\..\\..\\Documents\\PlatformIO\\Projects\\ESP32\\src\\main.ino"
+}
