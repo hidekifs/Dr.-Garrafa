@@ -23,20 +23,43 @@ void loop() {
     String dadosRecebidos = SerialBT.readStringUntil('\n'); // Lê os dados até encontrar um caractere de nova linha ('\n')
     Serial.println("Recebido: " + dadosRecebidos); // Imprime os dados recebidos no monitor serial
 
+    //extrai hora
     int hora = extrairNumero(dadosRecebidos, "\"hora\":");
+    int minuto = extrairNumero(dadosRecebidos, "\"minuto\":");
     if (hora != -1) {
       Serial.print("Hora extraída: ");
+      Serial.print("Minuto extraído: ");
       Serial.println(hora);
+      Serial.println(minuto);
     } else {
       Serial.println("Nenhuma hora encontrada.");
     }
 
-    int minuto = extrairNumero(dadosRecebidos, "\"minuto\":");
-    if (minuto != -1) {
-      Serial.print("Minuto extraído: ");
-      Serial.println(minuto);
+    //extrai minuto
+  //  int minuto = extrairNumero(dadosRecebidos, "\"minuto\":");
+  //  if (minuto != -1) {
+  //    Serial.print("Minuto extraído: ");
+  //    Serial.println(minuto);
+  //  } else {
+  //    Serial.println("Nenhum minuto encontrado.");
+  //  }
+
+    //extrai medicamento
+    int medicamento = extrairNumero(dadosRecebidos, "\"medicamento\":");
+    if (medicamento != -1) {
+      Serial.print("Medicamento extraído: ");
+      Serial.println(medicamento);
     } else {
-      Serial.println("Nenhum minuto encontrado.");
+      Serial.println("Nenhum medicamento encontrado.");
+    }
+
+    //extrai dispenser
+    int dispenser = extrairNumero(dadosRecebidos, "\"dispenser\":");
+    if (dispenser != -1) {
+      Serial.print("Dispenser extraído: ");
+      Serial.println(dispenser);
+    } else {
+      Serial.println("Nenhum dispenser encontrado.");
     }
   }
 }
