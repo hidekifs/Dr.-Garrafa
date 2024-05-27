@@ -44,6 +44,7 @@ const int motor1Pin = 9;
 //const int motor3Pin = ; 
 //const int motor4Pin = ; 
 const int ledPin = 10;
+const int buzzerPin = 7;
 
 // Instanciando os motores
 Motor motor1(motor1Pin);
@@ -67,6 +68,8 @@ void setup() {
 //  pinMode(botao2, INPUT); // Configurando o botão como entrada
 //  pinMode(botao3, INPUT); // Configurando o botão como entrada
 //  pinMode(botao4, INPUT); // Configurando o botão como entrada
+
+  pinMode(buzzerPin, OUTPUT);
 }
 
 void loop() {
@@ -76,12 +79,13 @@ void loop() {
 //  motor3.frente();
 //  motor4.frente();
   led.acende();
+  tone(buzzerPin, 5);
 
   // Verifica se o botão foi pressionado
   if (digitalRead(botao1) == HIGH) {
     motor1.parar();
     led.apaga();
-    Serial.print("motor parou");
+    noTone(buzzerPin);
   }
 
 //  if (digitalRead(botao2) == HIGH) {
