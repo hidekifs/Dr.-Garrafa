@@ -92,7 +92,7 @@ void loop() {
       Serial.println(quarta);
     }
 
-            //extrai quinta
+    //extrai quinta
     int quinta = extrairNumero(dadosRecebidos, "\"quinta\":");
     if (quinta != -1) {
       Serial.print("quinta extraído: ");
