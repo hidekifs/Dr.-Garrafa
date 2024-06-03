@@ -2,8 +2,6 @@
 
 RTC_DS3231 rtc; //define RTC
 
-//char daysOfWeek[7][12] = {"domingo","segunda","terça","quarta","quinta","sexta","sabado"}; //define string dos dias da semana
-
 #define motor1 15 //define motor do dispenser 1
 #define switch1 13 //define switch do dispenser 1
 
@@ -45,12 +43,6 @@ void setup () {
 
 void loop () {
   DateTime now = rtc.now(); //Atualizada variavél now de data e hora
-  //Serial.print("("); 
-  //Serial.print(now.dayOfTheWeek()); 
-  //Serial.print(") ");
-  //Serial.print(now.hour(), DEC); 
-  //Serial.print(':'); 
-  //Serial.println(now.minute(), DEC);
 
   verifica_data(18,6, 6); // TESTE INSERIR (HORA, MINUTO, DIA DA SEMANA)
   delay(900); // delay 0.9 seconds
